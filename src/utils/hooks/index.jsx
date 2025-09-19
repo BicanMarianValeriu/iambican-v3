@@ -16,7 +16,7 @@ const useContactForm = (options) => {
 				}
 
 				const formId = formRef.current.getAttribute('id');
-				const formURL = `${process.env.REACT_APP_API_URL}contact-form-7/v1/contact-forms/${formId.split('wpcf-')[1]}/feedback`;
+				const formURL = `https://dev.mvbican.com/mvbican/wp-json/contact-form-7/v1/contact-forms/${formId.split('wpcf-')[1]}/feedback`;
 				const newData = new FormData();
 
 				Object.keys(formData).forEach((key) => newData.append(key, formData[key]));

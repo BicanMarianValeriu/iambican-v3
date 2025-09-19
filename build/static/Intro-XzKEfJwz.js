@@ -1,0 +1,1 @@
+import{j as s,h as r}from"./main-DL-_-xzR.js";const i=({title:e="Lorem ipsum dolor sit",className:t})=>s.jsx("section",{className:r("page-intro bg-primary py-16 text-white",t),children:s.jsx("div",{className:"container",children:s.jsx("h1",{className:"text-3xl",children:e})})});export{i as P};

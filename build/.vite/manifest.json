@@ -1,13 +1,13 @@
 {
-  "_Intro-CxFAOtre.js": {
-    "file": "static/Intro-CxFAOtre.js",
+  "_Intro-XzKEfJwz.js": {
+    "file": "static/Intro-XzKEfJwz.js",
     "name": "Intro",
     "imports": [
       "index.html"
     ]
   },
   "index.html": {
-    "file": "static/main-DWDtzcjO.js",
+    "file": "static/main-DL-_-xzR.js",
     "name": "main",
     "src": "index.html",
     "isEntry": true,
@@ -31,27 +31,27 @@
     ]
   },
   "src/routes/Contact/index.jsx": {
-    "file": "static/index-B-hesRQS.js",
+    "file": "static/index-BPHNxazG.js",
     "name": "index",
     "src": "src/routes/Contact/index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_Intro-CxFAOtre.js"
+      "_Intro-XzKEfJwz.js"
     ]
   },
   "src/routes/Page/index.jsx": {
-    "file": "static/index-BC5KXl3e.js",
+    "file": "static/index-Dcw8BR0d.js",
     "name": "index",
     "src": "src/routes/Page/index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_Intro-CxFAOtre.js"
+      "_Intro-XzKEfJwz.js"
     ]
   },
   "src/routes/Portfolio/Single/index.jsx": {
-    "file": "static/index-l6PVQ7sd.js",
+    "file": "static/index-CQDO3AtK.js",
     "name": "index",
     "src": "src/routes/Portfolio/Single/index.jsx",
     "isDynamicEntry": true,
