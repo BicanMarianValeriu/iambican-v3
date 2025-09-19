@@ -16,6 +16,7 @@
 !wordpress/wp-content/plugins/iambican
 wordpress
 /dploy.js
+/package-lock.json
 
 # misc
 .DS_Store
