@@ -12,6 +12,11 @@
 		"test": "vitest"
 	},
 	"dependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+		"@babel/preset-env": "^7.28.3",
+		"@babel/preset-react": "^7.22.5",
+		"@babel/register": "^7.28.3",
+		"@wordpress/browserslist-config": "^6.4.0",
 		"@hookform/resolvers": "^5.2.2",
 		"@radix-ui/react-accordion": "^1.2.11",
 		"@radix-ui/react-dialog": "^1.1.4",
@@ -50,13 +55,8 @@
 		"tailwind-merge": "^2.6.0",
 		"zod": "^4.1.9"
 	},
-	"devDependencies": {
-		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-		"@babel/preset-env": "^7.28.3",
-		"@babel/preset-react": "^7.22.5",
-		"@babel/register": "^7.28.3",
+	"devDependencies": { 
 		"@vitejs/plugin-react": "^5.0.3",
-		"@wordpress/browserslist-config": "^6.4.0",
 		"autoprefixer": "^10.4.21",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.0.0",
