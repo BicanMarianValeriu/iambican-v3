@@ -1,0 +1,146 @@
+/* About Section */
+.about-me {
+	&__image {
+		&-wrap {
+			perspective: 650px;
+			perspective-origin: center;
+		}
+	}
+
+	&__profile {
+		border: 10px solid #fff;
+		will-change: transform;
+
+		&:hover {
+			svg {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		div {
+			position: absolute;
+			opacity: 0;
+			top: 50%;
+			left: 50%;
+			max-width: 100%;
+			height: 0;
+			padding-bottom: 115%;
+			background-size: cover;
+			background-position: center;
+			transition: opacity 0.6s ease-in-out;
+			transform: translate3d(-50%, -50%, 0);
+
+			&.shown {
+				position: relative;
+				display: block;
+				opacity: 1;
+				top: 0;
+				left: 0;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+
+		&-decoration {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: #fff;
+			overflow: hidden;
+			transform: scale3d(1.3, 1.05, 1);
+			stroke-dasharray: 1270;
+			stroke-dashoffset: 1270;
+			transition: stroke-dashoffset 0.7s;
+			pointer-events: none;
+		}
+	}
+
+	&__content {
+		&-text {
+			max-height: 125px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			overflow-wrap: break-word;
+
+			&--opened {
+				max-height: 100%;
+				overflow: visible;
+
+				&::after {
+					content: none !important;
+				}
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+			}
+
+			&::before {
+				width: 100%;
+				border-top: 1px solid lightgray;
+				transform: translateY(-1.25rem);
+				z-index: 10;
+			}
+
+			&::after {
+				bottom: -5px;
+				left: 0;
+				height: 75px;
+				width: 100%;
+				z-index: 5;
+				background: linear-gradient(to top, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, .7) 80%, rgba(255, 255, 255, .2) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+			}
+
+			mark {
+				background-color: transparent;
+				text-decoration: line-through;
+			}
+		}
+	}
+}
+
+/* Experience Section */
+.about-experience {
+	--wp--perspective: 1200px;
+
+	.timeline {
+		&__boxes {
+			perspective: var(--wp--perspective);
+		}
+	}
+
+	.timeline-box {
+		perspective: var(--wp--perspective);
+
+		&::before {
+			box-shadow: 0 0 0 3px #fff, 0 0 0 6px rgb(226 232 240 / var(--tw-bg-opacity));
+		}
+
+		&--animated {
+			&::before {
+				background-color: #1b1c26 !important;
+				box-shadow: 0 0 0 3px #fff, 0 0 0 6px #1b1c26 !important;
+			}
+		}
+
+		// &__animation {
+		// 	opacity: 0;
+		// 	transform: translateX(35px) rotateX(0deg);
+
+		// 	@media (max-width: 575px) {
+		// 		transform: translate3d(0, 0, 0) rotateX(-90deg);
+		// 	}
+
+		// 	&--ended {
+		// 		transform: translate3d(0, 0, 0);
+		// 		opacity: 1;
+		// 	}
+		// }
+	}
+}

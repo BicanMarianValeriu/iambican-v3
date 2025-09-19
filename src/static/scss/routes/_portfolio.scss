@@ -1,0 +1,106 @@
+.portfolio {
+    --wp--transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+
+    &:not(.entry--single):hover {
+        .portfolio {
+            &__content {
+                border-color: lightgray;
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+            }
+        }
+
+        .wp-media {
+            &__ratio {
+                transform: scale(1.1) rotate(-4deg);
+            }
+        }
+    }
+
+    &__meta {
+        hr {
+            background-image: linear-gradient(to right, #DBDBDB, #DBDBDB, transparent)!important;
+        }
+    }
+
+    &__content {
+        color: #777777;
+        line-height: 1.7;
+
+        :where(.wp-block-heading) {
+            color: #121212;
+            font-weight: 700;
+        }
+
+        :is(h4,h5,h6) {
+            font-weight: 300;
+            color: hsl(var(--primary));
+
+            & + * {
+                margin-top: 0;
+            }
+        }
+
+        ul,
+        ol {
+            padding-left: 1.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+    }
+}
+
+.portfolio-sharing {
+    button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px auto 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 1px solid lightgray;
+        outline: none;
+        transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 0 4px 1px rgba(#000000, .1);
+
+        &:hover {
+            background-color: hsl(var(--primary)) !important;
+            border-color: hsl(var(--primary)) !important;
+            color: white !important;
+            box-shadow: 0 0 2px 1px rgba(#000000, .1);
+        }
+    }
+}
+
+.portfolio-social {
+    .fb-comments {
+        display: block;
+        margin-left: -8px;
+        margin-right: -8px;
+        width: calc(100% + 15px) !important;
+        min-width: calc(100% + 15px);
+        max-width: initial;
+
+        &.fb_iframe_widget_fluid,
+        &.fb_iframe_widget_fluid_desktop {
+            display: block !important;
+        }
+
+        span {
+            display: block;
+        }
+
+        iframe {
+            min-width: 100% !important;
+        }
+    }
+}

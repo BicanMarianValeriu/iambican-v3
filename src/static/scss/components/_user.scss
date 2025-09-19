@@ -1,0 +1,49 @@
+/* 	= User Login
+--------------------------------------------------------------- */
+.user-login {
+    --wp--size: 35px;
+    position: relative;
+    overflow: visible;
+    opacity: 1;
+
+    &--loading {
+        pointer-events: none;
+        
+        .user-login {
+            &__svg {
+                filter: blur(1px);
+            }
+        }
+    }
+
+    /* Mask */
+    &__mask {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 50%;
+        height: 100%;
+        margin-left: -50%;
+        margin-top: -50%;
+        overflow: hidden;
+        transform-origin: right center;
+        mask-image: -webkit-linear-gradient(top, #000, rgba(0, 0, 0, 0));
+        animation: spin 1.2s infinite linear;
+        pointer-events: none;
+
+        div {
+            box-shadow: inset 0 0 0 4px hsl(var(--primary));
+        }
+    }
+
+    &__avatar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 85%;
+        height: 85%;
+        transform: translate3d(-50%, -50%, 0);
+        border-radius: 100%;
+        transition: all 1s ease-in-out;
+    }
+}

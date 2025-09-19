@@ -1,0 +1,15 @@
+/* 	= Header
+--------------------------------------------------------------- */
+.header {
+    .fb_iframe_widget {
+        & > span {
+            display: block;
+            height: initial !important;
+
+            iframe {
+                position: relative;
+                height: 20px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+  "_Intro-CxFAOtre.js": {
+    "file": "static/Intro-CxFAOtre.js",
+    "name": "Intro",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "index.html": {
+    "file": "static/main-DWDtzcjO.js",
+    "name": "main",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/routes/Page/index.jsx",
+      "src/routes/Contact/index.jsx",
+      "src/routes/Portfolio/Single/index.jsx"
+    ],
+    "css": [
+      "static/main-4qrTGl0Q.css"
+    ],
+    "assets": [
+      "static/placeholder-bold-Be9cigBi.png",
+      "static/bican-B3O0L0Z_.jpg",
+      "static/bican-cartoon-DesgutE9.jpg",
+      "static/ShadowsIntoLight-DCgxlQ4K.eot",
+      "static/ShadowsIntoLight-DWFvZaWv.woff2",
+      "static/ShadowsIntoLight-BoFYjYd9.woff",
+      "static/ShadowsIntoLight-ua7qbMzO.ttf",
+      "static/ShadowsIntoLight-CzwGOwK4.svg"
+    ]
+  },
+  "src/routes/Contact/index.jsx": {
+    "file": "static/index-B-hesRQS.js",
+    "name": "index",
+    "src": "src/routes/Contact/index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_Intro-CxFAOtre.js"
+    ]
+  },
+  "src/routes/Page/index.jsx": {
+    "file": "static/index-BC5KXl3e.js",
+    "name": "index",
+    "src": "src/routes/Page/index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_Intro-CxFAOtre.js"
+    ]
+  },
+  "src/routes/Portfolio/Single/index.jsx": {
+    "file": "static/index-l6PVQ7sd.js",
+    "name": "index",
+    "src": "src/routes/Portfolio/Single/index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/static/fonts/ShadowsIntoLight.eot": {
+    "file": "static/ShadowsIntoLight-DCgxlQ4K.eot",
+    "src": "src/static/fonts/ShadowsIntoLight.eot"
+  },
+  "src/static/fonts/ShadowsIntoLight.svg": {
+    "file": "static/ShadowsIntoLight-CzwGOwK4.svg",
+    "src": "src/static/fonts/ShadowsIntoLight.svg"
+  },
+  "src/static/fonts/ShadowsIntoLight.ttf": {
+    "file": "static/ShadowsIntoLight-ua7qbMzO.ttf",
+    "src": "src/static/fonts/ShadowsIntoLight.ttf"
+  },
+  "src/static/fonts/ShadowsIntoLight.woff": {
+    "file": "static/ShadowsIntoLight-BoFYjYd9.woff",
+    "src": "src/static/fonts/ShadowsIntoLight.woff"
+  },
+  "src/static/fonts/ShadowsIntoLight.woff2": {
+    "file": "static/ShadowsIntoLight-DWFvZaWv.woff2",
+    "src": "src/static/fonts/ShadowsIntoLight.woff2"
+  },
+  "src/static/images/bican-cartoon.jpg": {
+    "file": "static/bican-cartoon-DesgutE9.jpg",
+    "src": "src/static/images/bican-cartoon.jpg"
+  },
+  "src/static/images/bican.jpg": {
+    "file": "static/bican-B3O0L0Z_.jpg",
+    "src": "src/static/images/bican.jpg"
+  },
+  "src/static/images/placeholder-bold.png": {
+    "file": "static/placeholder-bold-Be9cigBi.png",
+    "src": "src/static/images/placeholder-bold.png"
+  }
+}
