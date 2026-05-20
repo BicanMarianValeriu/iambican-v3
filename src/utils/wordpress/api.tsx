@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const APIUrl = process.env.REACT_API_URL || 'http://localhost/wecodeart-iambican/wp-json/';
+const APIUrl = process.env.REACT_API_URL || 'https://wordpress.mvbican.com//wp-json/';
 axios.defaults.baseURL = APIUrl;
 const apiConfig = { baseURL: APIUrl };
 

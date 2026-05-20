@@ -27,7 +27,7 @@ function useContactForm<TFieldValues extends FieldValues = FieldValues>(
 				const formId = formRef.current?.getAttribute('id');
 				if (!formId) return;
 
-				const formURL = `http://localhost/wecodeart-iambican/wp-json/contact-form-7/v1/contact-forms/${formId.split('wpcf-')[1]}/feedback`;
+				const formURL = `https://wordpress.mvbican.com/wp-json/contact-form-7/v1/contact-forms/${formId.split('wpcf-')[1]}/feedback`;
 				const newData = new FormData();
 
 				Object.keys(formData).forEach((key) => {
