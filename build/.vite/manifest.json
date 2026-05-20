@@ -1,10 +1,10 @@
 {
-  "_portfolio-BU4BDP1t.css": {
-    "file": "static/portfolio-BU4BDP1t.css",
-    "src": "_portfolio-BU4BDP1t.css"
+  "_portfolio-BFv6KcHb.css": {
+    "file": "static/portfolio-BFv6KcHb.css",
+    "src": "_portfolio-BFv6KcHb.css"
   },
   "index.html": {
-    "file": "static/main-CzgtwOPF.js",
+    "file": "static/main-V_8dWTlv.js",
     "name": "main",
     "src": "index.html",
     "isEntry": true,
@@ -15,7 +15,7 @@
       "src/routes/Portfolio/Archive/index.tsx"
     ],
     "css": [
-      "static/main-B5Pf03F9.css"
+      "static/main-B_dbeZWX.css"
     ],
     "assets": [
       "static/placeholder-bold-Be9cigBi.png",
@@ -29,7 +29,7 @@
     ]
   },
   "src/routes/Contact/index.tsx": {
-    "file": "static/Contact-BVcXmoiw.js",
+    "file": "static/Contact-B6AzkvYk.js",
     "name": "Contact",
     "src": "src/routes/Contact/index.tsx",
     "isDynamicEntry": true,
@@ -38,7 +38,7 @@
     ]
   },
   "src/routes/Page/index.tsx": {
-    "file": "static/Page-C9xfcBjy.js",
+    "file": "static/Page-BinVba-P.js",
     "name": "Page",
     "src": "src/routes/Page/index.tsx",
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
     ]
   },
   "src/routes/Portfolio/Archive/index.tsx": {
-    "file": "static/Archive-CBFmuz9e.js",
+    "file": "static/Archive-vD2BBNyU.js",
     "name": "Archive",
     "src": "src/routes/Portfolio/Archive/index.tsx",
     "isDynamicEntry": true,
@@ -58,11 +58,11 @@
       "index.html"
     ],
     "css": [
-      "static/portfolio-BU4BDP1t.css"
+      "static/portfolio-BFv6KcHb.css"
     ]
   },
   "src/routes/Portfolio/Single/index.tsx": {
-    "file": "static/Single-CikdfQo0.js",
+    "file": "static/Single-DOkMwDZ7.js",
     "name": "Single",
     "src": "src/routes/Portfolio/Single/index.tsx",
     "isDynamicEntry": true,
@@ -70,7 +70,7 @@
       "index.html"
     ],
     "css": [
-      "static/portfolio-BU4BDP1t.css"
+      "static/portfolio-BFv6KcHb.css"
     ]
   },
   "src/static/fonts/ShadowsIntoLight.eot": {
