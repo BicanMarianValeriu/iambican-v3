@@ -3,6 +3,10 @@
 	"version": "3.0.0",
 	"private": true,
 	"homepage": "/",
+	"type": "module",
+	"engines": {
+		"node": "22.14.0"
+	},
 	"scripts": {
 		"start": "cross-env NODE_ENV=production node ./server/index.js",
 		"dev": "vite",
