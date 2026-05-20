@@ -20,6 +20,8 @@ import {
 
 export default function Switcher({
     teams,
+}: {
+    teams: any
 }) {
     const { isMobile } = useSidebar();
     const [activeTeam, setActiveTeam] = useState(teams[0]);
@@ -52,7 +54,7 @@ export default function Switcher({
                         sideOffset={4}
                     >
                         <DropdownMenuLabel className="text-xs text-muted-foreground">Panou de control</DropdownMenuLabel>
-                        {teams.map((team, index) => (
+                        {teams.map((team: any, index: number) => (
                             <DropdownMenuItem
                                 key={team.name}
                                 onClick={() => setActiveTeam(team)}

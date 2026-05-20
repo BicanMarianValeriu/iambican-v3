@@ -30,13 +30,15 @@ export const Sharing = (props: {
 
     const socialUrl = createUrl();
 
+    const className = "rounded-full! bg-accent! hover:bg-primary!";
+
     return (
         <div className="portfolio__sharing absolute top-0 h-full right-[calc(100%-30px)] xl:right-[calc(100%+20px)]">
             <div className="portfolio-sharing sticky top-[80px]" >
-                <FacebookShareButton url={socialUrl} className="rounded-full bg-accent"><FaFacebook /></FacebookShareButton>
-                <LinkedinShareButton url={socialUrl} className="rounded-full bg-accent"><FaLinkedin /></LinkedinShareButton>
-                <XShareButton url={socialUrl} className="rounded-full bg-accent"><FaTwitter /></XShareButton>
-                <WhatsappShareButton url={socialUrl} className="rounded-full bg-accent"><FaWhatsapp /></WhatsappShareButton>
+                <FacebookShareButton url={socialUrl} className={className}><FaFacebook /></FacebookShareButton>
+                <LinkedinShareButton url={socialUrl} className={className}><FaLinkedin /></LinkedinShareButton>
+                <XShareButton url={socialUrl} className={className}><FaTwitter /></XShareButton>
+                <WhatsappShareButton url={socialUrl} className={className}><FaWhatsapp /></WhatsappShareButton>
             </div>
         </div>
     );

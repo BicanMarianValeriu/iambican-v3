@@ -15,8 +15,7 @@
         "ui": "@/components/ui",
         "lib": "@/utils",
         "hooks": "@/hooks",
-        "utils": "@/utils/functions",
-        "wordpress": "@/utils/wordpress"
+        "utils": "@/utils/functions"
     },
     "iconLibrary": "lucide"
 }
