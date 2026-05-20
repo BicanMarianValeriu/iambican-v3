@@ -14,7 +14,7 @@
 # wordpress install
 !wordpress/wp-content/plugins/iambican/
 !wordpress/wp-content/plugins/iambican
-wordpress
+/wordpress
 /dploy.js
 /package-lock.json
 

@@ -1,8 +1,8 @@
 const path = require('path');
-
-// CSS styles will be imported on load and that complicates matters... ignore those bad boys!
+const Module = require('module');
 const ignoreStyles = require('ignore-styles');
 const register = ignoreStyles.default;
+const originalRequire = Module.prototype.require;
 
 // Load Vite manifest
 let manifest;
@@ -53,16 +53,13 @@ register(ignoreStyles.DEFAULT_EXTENSIONS, (mod, filename) => {
 });
 
 // Modern module resolution for SSR
-const Module = require('module');
-const originalRequire = Module.prototype.require;
-
 Module.prototype.require = function(id) {
     // Handle src/ imports with automatic extension resolution
     if (id.startsWith('src/')) {
         const fullPath = path.resolve(process.cwd(), id);
         
         // Try extensions in order of preference
-        const extensions = ['.jsx', '.js', '.json'];
+        const extensions = ['.tsx', '.ts', '.jsx', '.js', '.json'];
         
         // First try direct file with extension
         for (const ext of extensions) {
@@ -93,9 +90,13 @@ require('@babel/register')({
         ['@babel/preset-env', {
             targets: { node: 'current' }
         }], 
-        '@babel/preset-react'
+        '@babel/preset-react',
+        ['@babel/preset-typescript', {
+            isTSX: true,
+            allExtensions: true
+        }]
     ],
-    extensions: ['.jsx', '.js']
+    extensions: ['.tsx', '.ts', '.jsx', '.js']
 });
 
 // Load the server

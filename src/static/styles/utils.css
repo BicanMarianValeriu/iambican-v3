@@ -1,0 +1,118 @@
+/* shadows-into-light-regular - latin */
+@font-face {
+    font-family: "Shadows Into Light";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/ShadowsIntoLight.eot');
+    src: local('Shadows Into Light'), local('ShadowsIntoLight'),
+        url('../fonts/ShadowsIntoLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ShadowsIntoLight.woff2') format('woff2'),
+        url('../fonts/ShadowsIntoLight.woff') format('woff'),
+        url('../fonts/ShadowsIntoLight.ttf') format('truetype'),
+        url('../fonts/ShadowsIntoLight.svg#ShadowsIntoLight') format('svg');
+}
+
+@theme inline {
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-border-beam: border-beam calc(var(--duration) * 1s) infinite linear;
+    --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite;
+    --animate-grid: grid calc(var(--duration) * 1s) infinite linear;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+
+        to {
+            height: 0;
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes atom-spinner-animation-1 {
+        100% {
+            transform: rotateZ(120deg) rotateX(66deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes atom-spinner-animation-2 {
+        100% {
+            transform: rotateZ(240deg) rotateX(66deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes atom-spinner-animation-3 {
+        100% {
+            transform: rotateZ(360deg) rotateX(66deg) rotateZ(360deg);
+        }
+    }
+}
+
+@layer utilities {
+    #wecodeartReact {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .is-layout-flow {
+        * {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            +* {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+
+    .font-cursive {
+        font-family: "Shadows Into Light", cursive;
+    }
+
+    .fb_iframe_widget {
+        display: block !important;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:hover {
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+
+    @media (width >=--theme(--breakpoint-sm)) {
+        max-width: none;
+    }
+
+    @media (width >=1280px) {
+        max-width: 1280px;
+    }
+}

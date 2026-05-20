@@ -1,0 +1,7 @@
+/* 	= Navigation
+--------------------------------------------------------------- */
+.wp-block-navigation-item__content {
+    &.active {
+        color: var(--primary);
+    }
+}

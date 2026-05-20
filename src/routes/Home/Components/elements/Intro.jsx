@@ -68,7 +68,7 @@ const Component = () => {
                     </div>
                     <div className="w-full md:w-2/3 lg:w-3/4 md:ps-5 lg:ps-10 self-end">
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-none mb-4 [text-shadow:_0_5px_10px_rgb(0_0_0_/_30%)]">Bican Marian Valeriu</h1>
-                        <p className="text-sm lg:text-xl leading-none mb-2 md:mb-3">WordPress/React Developer at myZone/AM2Studio</p>
+                        <p className="text-sm lg:text-xl leading-none mb-2 md:mb-3">WordPress/React Developer & AI Expert</p>
                         <p className="text-md md:text-xl leading-none mb-1 md:mb-2">Targu Jiu, Gorj, Romania</p>
                     </div>
                 </div>

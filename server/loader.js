@@ -13,7 +13,7 @@ import { createStaticHandler, createStaticRouter, StaticRouterProvider } from 'r
 
 // Our store, entrypoint, and manifest
 import routes, { queryClient } from './../src/routes';
-import { createAxiosRequest } from './helpers';
+import { createFetchRequest } from './helpers';
 import { AuthProvider } from '../src/auth';
 
 const handler = createStaticHandler(routes);
@@ -48,12 +48,6 @@ const loader = async (req, res) => {
 		res.status(404).end(); // Not found
 		return;
 	}
-	
-	if (reqPath === '/robots.txt') {
-		res.setHeader('Content-Type', 'text/plain');
-		res.send('User-agent: *\nAllow: /');
-		return;
-	}
 
 	// If we have a page in the cache, let's serve it
 	if (ssrCache.has(reqPath)) {
@@ -63,7 +57,7 @@ const loader = async (req, res) => {
 	}
 
 	try {
-		const fetchRequest = createAxiosRequest(req);
+		const fetchRequest = createFetchRequest(req);
 		const context = await handler.query(fetchRequest);
 
 		if (context instanceof Response && context.status >= 300 && context.status < 400) {
