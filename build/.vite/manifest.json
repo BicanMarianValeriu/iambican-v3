@@ -4,7 +4,7 @@
     "src": "_portfolio-nDQQcmSx.css"
   },
   "index.html": {
-    "file": "static/main-BRiyOfjk.js",
+    "file": "static/main-B8asXm5K.js",
     "name": "main",
     "src": "index.html",
     "isEntry": true,
@@ -29,7 +29,7 @@
     ]
   },
   "src/routes/Contact/index.tsx": {
-    "file": "static/Contact-viPivvBT.js",
+    "file": "static/Contact-CX3t3i_m.js",
     "name": "Contact",
     "src": "src/routes/Contact/index.tsx",
     "isDynamicEntry": true,
@@ -38,7 +38,7 @@
     ]
   },
   "src/routes/Page/index.tsx": {
-    "file": "static/Page-BOlnE-m-.js",
+    "file": "static/Page-DxBDdx_l.js",
     "name": "Page",
     "src": "src/routes/Page/index.tsx",
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
     ]
   },
   "src/routes/Portfolio/Archive/index.tsx": {
-    "file": "static/Archive-BIvwDOE0.js",
+    "file": "static/Archive-DE8-reMX.js",
     "name": "Archive",
     "src": "src/routes/Portfolio/Archive/index.tsx",
     "isDynamicEntry": true,
@@ -62,7 +62,7 @@
     ]
   },
   "src/routes/Portfolio/Single/index.tsx": {
-    "file": "static/Single-EswFBoEC.js",
+    "file": "static/Single-DOnpjyNp.js",
     "name": "Single",
     "src": "src/routes/Portfolio/Single/index.tsx",
     "isDynamicEntry": true,
