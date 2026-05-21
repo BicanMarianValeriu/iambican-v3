@@ -29,7 +29,7 @@ const reducer = (state: any, action: any) => {
 };
 
 // Middleware
-const loggerMiddleware = (dispatch) => (action) => {
+const loggerMiddleware = (dispatch: any) => (action: any) => {
     if (isLocalhost) {
         console.log('Dispatching action:', action);
     }
@@ -37,19 +37,22 @@ const loggerMiddleware = (dispatch) => (action) => {
 };
 
 // Context
-const AuthContext = createContext({});
+const AuthContext = createContext({
+    ...initialState,
+    actions: {}
+});
 
 // AuthProvider
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [token, setToken, removeToken] = useCookie('jwtToken', { expires: 30, secure: true, sameSite: 'Strict' });
     const [state, dispatch] = useReducer(reducer, initialState);
     const enhancedDispatch = loggerMiddleware(dispatch);
 
     const actions = {
-        setLoading: (isLoading) => {
+        setLoading: (isLoading: boolean) => {
             enhancedDispatch({ type: ACTIONS.SET_LOADING, payload: isLoading });
         },
-        setUser: (data) => {
+        setUser: (data: any) => {
             enhancedDispatch({ type: ACTIONS.SET_USER, payload: data });
         },
         logout: () => {
@@ -90,7 +93,7 @@ export const AuthProvider = ({ children }) => {
     }, [token]);
 
     useLayoutEffect(() => {
-        const authInterceptor = requestApi.interceptors.request.use((config) => {
+        const authInterceptor = requestApi.interceptors.request.use((config: any) => {
             config.headers.Authorization = !config._retry && token ? `Bearer ${token}` : config.headers.Authorization;
             return config;
         });
@@ -155,16 +158,16 @@ export const useAuth = () => {
 };
 
 // Check if token expired
-export const isTokenExpired = (token) => {
+export const isTokenExpired = (token: string) => {
     if (!token) {
         return true;
     }
 
     try {
-        const decoded = jwtDecode(token);
+        const decoded: { exp: number } = jwtDecode(token);
         const currentTime = Date.now() / 1000;
 
-        return decoded.exp < currentTime;
+        return decoded?.exp < currentTime;
     } catch (error) {
         return true;
     }

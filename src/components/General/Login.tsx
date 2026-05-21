@@ -26,7 +26,7 @@ export const Login = () => {
         return (
             <>
                 {loading && <div className="user-login__mask"><div className="size-[var(--wp--size)] rounded-full"></div></div>}
-                <img className="user-login__avatar" alt={`${name}'s avatar`} src={avatarSrc} />
+                <img className="user-login__avatar" alt={`${name}'s avatar`} src={avatarSrc} loading="lazy" fetchPriority="low" />
                 {!user && <UserCircle className="user-login__svg size-[var(--wp--size)] z-10" />}
             </>
         );
@@ -42,7 +42,7 @@ export const Login = () => {
             {user ?
                 <DropdownMenu modal={false}>
                     <DropdownMenuTrigger asChild>
-                        <Button className="user-login__button relative flex rounded-full size-[var(--wp--size)] p-0">
+                        <Button className="user-login__button relative flex rounded-full size-(--wp--size) p-0">
                             <span className="sr-only">Deschide meniu user</span>
                             <UserLoginSVG />
                         </Button>
@@ -61,7 +61,7 @@ export const Login = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
                 :
-                <NavLink className="user-login__button relative flex rounded-full size-[var(--wp--size)] focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-accent" to="/login/">
+                <NavLink className="user-login__button relative flex rounded-full size-(--wp--size) focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-accent" to="/login/">
                     <span className="sr-only">Mergi la panoul de control</span>
                     <UserLoginSVG />
                 </NavLink>

@@ -1,10 +1,10 @@
 {
-  "_portfolio-BFv6KcHb.css": {
-    "file": "static/portfolio-BFv6KcHb.css",
-    "src": "_portfolio-BFv6KcHb.css"
+  "_portfolio-nDQQcmSx.css": {
+    "file": "static/portfolio-nDQQcmSx.css",
+    "src": "_portfolio-nDQQcmSx.css"
   },
   "index.html": {
-    "file": "static/main-BbSMpFP5.js",
+    "file": "static/main-B8asXm5K.js",
     "name": "main",
     "src": "index.html",
     "isEntry": true,
@@ -15,7 +15,7 @@
       "src/routes/Portfolio/Archive/index.tsx"
     ],
     "css": [
-      "static/main-BLHAQrgG.css"
+      "static/main-DS-UGx6k.css"
     ],
     "assets": [
       "static/placeholder-bold-Be9cigBi.png",
@@ -29,7 +29,7 @@
     ]
   },
   "src/routes/Contact/index.tsx": {
-    "file": "static/Contact-Efd2_YJ-.js",
+    "file": "static/Contact-CX3t3i_m.js",
     "name": "Contact",
     "src": "src/routes/Contact/index.tsx",
     "isDynamicEntry": true,
@@ -38,7 +38,7 @@
     ]
   },
   "src/routes/Page/index.tsx": {
-    "file": "static/Page-rvJ24Y7i.js",
+    "file": "static/Page-DxBDdx_l.js",
     "name": "Page",
     "src": "src/routes/Page/index.tsx",
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
     ]
   },
   "src/routes/Portfolio/Archive/index.tsx": {
-    "file": "static/Archive-4jJeQ2WC.js",
+    "file": "static/Archive-DE8-reMX.js",
     "name": "Archive",
     "src": "src/routes/Portfolio/Archive/index.tsx",
     "isDynamicEntry": true,
@@ -58,11 +58,11 @@
       "index.html"
     ],
     "css": [
-      "static/portfolio-BFv6KcHb.css"
+      "static/portfolio-nDQQcmSx.css"
     ]
   },
   "src/routes/Portfolio/Single/index.tsx": {
-    "file": "static/Single-BpiU06U1.js",
+    "file": "static/Single-DOnpjyNp.js",
     "name": "Single",
     "src": "src/routes/Portfolio/Single/index.tsx",
     "isDynamicEntry": true,
@@ -70,7 +70,7 @@
       "index.html"
     ],
     "css": [
-      "static/portfolio-BFv6KcHb.css"
+      "static/portfolio-nDQQcmSx.css"
     ]
   },
   "src/static/fonts/ShadowsIntoLight.eot": {
