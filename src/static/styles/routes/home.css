@@ -59,44 +59,44 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	overflow-wrap: break-word;
+}
 
-	&--opened {
-		max-height: 100%;
-		overflow: visible;
+.about-me__content-text--opened {
+	max-height: 100%;
+	overflow: visible;
+}
 
-		&::after {
-			content: none !important;
-		}
-	}
+.about-me__content-text--opened::after {
+	content: none !important;
+}
 
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-	}
+.about-me__content-text::before,
+.about-me__content-text::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+}
 
-	&::before {
-		width: 100%;
-		border-top: 1px solid lightgray;
-		transform: translateY(-1.25rem);
-		z-index: 10;
-	}
+.about-me__content-text::before {
+	width: 100%;
+	border-top: 1px solid lightgray;
+	transform: translateY(-1.25rem);
+	z-index: 10;
+}
 
-	&::after {
-		bottom: -5px;
-		left: 0;
-		height: 75px;
-		width: 100%;
-		z-index: 5;
-		background: linear-gradient(to top, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, .7) 80%, rgba(255, 255, 255, .2) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
-	}
+.about-me__content-text::after {
+	bottom: -5px;
+	left: 0;
+	height: 75px;
+	width: 100%;
+	z-index: 5;
+	background: linear-gradient(to top, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, .7) 80%, rgba(255, 255, 255, .2) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+}
 
-	mark {
-		background-color: transparent;
-		text-decoration: line-through;
-	}
+.about-me__content-text mark {
+	background-color: transparent;
+	text-decoration: line-through;
 }
 
 /* Experience Section */

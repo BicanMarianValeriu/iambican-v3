@@ -3,7 +3,7 @@ import classNames from 'clsx';
 
 export const Intro = ({ title = 'Lorem ipsum dolor sit', className }: {
 	title: string;
-	className: string;
+	className?: string;
 }) => (
 	<section className={classNames('page-intro bg-primary py-16 text-white', className)}>
 		<div className="container">

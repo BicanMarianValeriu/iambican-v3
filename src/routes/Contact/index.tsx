@@ -2,11 +2,11 @@
 
 import React, { useEffect } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useContactForm } from '@/hooks/use-contact';
-import { Button } from "@/components/ui/button";
-import { FormField } from '@/components/General';
+import { useContactForm } from './../../hooks/use-contact';
+import { Button } from "./../../components/ui/button";
+import { FormField } from './../../components/General';
 import { Intro } from '../Page/Components/Intro';
-import { contactSchema } from '@/utils/types';
+import { contactSchema } from './../../utils/types';
 
 // ⬇️ define your Component
 export function Component() {

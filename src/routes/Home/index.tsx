@@ -7,11 +7,11 @@ const Home = () => {
 	useEffect(() => window.scrollTo(0, 0));
 
 	return (
-		<div className="content" id="content">
+		<main className="content" id="content">
 			<About />
 			<Experience />
 			<Skills />
-		</div>
+		</main>
 	);
 }
 

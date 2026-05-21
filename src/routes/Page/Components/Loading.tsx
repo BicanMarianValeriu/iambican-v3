@@ -11,11 +11,12 @@ const PageLoading = () => {
                         speed={2}
                         width="100%"
                         height={40}
-                        viewBox="0 0 100% 40"
+                        viewBox="0 0 200 40"
+                        preserveAspectRatio="xMinYMin meet"
                         backgroundColor="#f3f3f3"
                         foregroundColor="#ecebeb"
                     >
-                        <rect x="0" y="0" rx="4" ry="4" width="30%" height="40" />
+                        <rect x="0" y="0" rx="4" ry="4" width="50%" height="40" />
                     </ContentLoader>
                 </div>
             </div>
@@ -28,7 +29,8 @@ const PageLoading = () => {
                             speed={2}
                             width="100%"
                             height={600}
-                            viewBox="0 0 100% 600"
+                            viewBox="0 0 500 600"
+                            preserveAspectRatio="xMinYMin meet"
                             backgroundColor="#f3f3f3"
                             foregroundColor="#ecebeb"
                         >

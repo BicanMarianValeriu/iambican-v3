@@ -8,14 +8,25 @@ import { Input } from './../ui/input';
 import { Textarea } from './../ui/textarea';
 import { Rect } from './Rect';
 
-export const FormField = forwardRef(({ type = 'hidden', name, control, className, label, description, loading, ...props }, ref) => {
+export const FormField = forwardRef(({ type = 'hidden', name, control, className, label, description, loading, ...props }: {
+    type: string;
+    name: string;
+    label: string;
+    rows?: number;
+    autoComplete?: string;
+    description?: string;
+    className?: string;
+    disabled?: boolean;
+    loading?: boolean;
+    control: any;
+}, ref) => {
     const { field, formState } = useController({ name, control });
 
     if (loading) {
         return (
             <>
-                <Rect className="rounded mt-1" width="110" height="10" />
-                <Rect className="rounded mt-3" width="100%" height={type === 'textarea' ? 90 : 36} />
+                <Rect className="rounded mt-1" width={110} height={10} />
+                <Rect className="rounded mt-3" height={type === 'textarea' ? 90 : 36} style={{ height: '100%' }} />
             </>
         );
     }
