@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useLoaderData, useParams } from 'react-router';
 import { Intro } from './Components';
 import { Main } from '../../components/General/Main';
@@ -16,7 +16,7 @@ export function Component() {
     const initialData = useLoaderData();
     const { slug } = useParams();
     const { data: page } = useQuery({
-        ...pageQuery(slug),
+        ...pageQuery(slug as string),
         initialData
     });
 
@@ -27,7 +27,7 @@ export function Component() {
             <Helmet {...getMetaTags(page)} />
             <div className="content content--page content--single" id="content">
                 <Intro title={title} />
-                <Main posts={[page]} className="container py-5 lg:py-10" />
+                <Main posts={[page]} isSingle={true} loading={false} className="container py-5 lg:py-10" />
             </div>
         </>
     );

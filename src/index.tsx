@@ -25,24 +25,22 @@ const Application = () => {
 
 const app = (<Application />);
 
-if (container.hasChildNodes() && process?.env?.NODE_ENV === 'production') {
-    try {
-        const root = hydrateRoot(container, app);
-        (container as any).__reactRoot = root;
-    } catch (error) {
-        // Fallback to client-side render if hydration fails
-        let root = (container as any).__reactRoot;
-        if (!root) {
-            root = createRoot(container);
-            (container as any).__reactRoot = root;
-        }
-        root.render(app);
-    }
-} else {
+const fallback = ({ container, app }: { container: HTMLElement, app: React.ReactNode }) => {
     let root = (container as any).__reactRoot;
     if (!root) {
         root = createRoot(container);
         (container as any).__reactRoot = root;
     }
     root.render(app);
+}
+
+if (container.hasChildNodes() && process?.env?.NODE_ENV === 'production') {
+    try {
+        const root = hydrateRoot(container, app);
+        (container as any).__reactRoot = root;
+    } catch (error) {
+        fallback({ container, app });
+    }
+} else {
+    fallback({ container, app });
 }

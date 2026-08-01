@@ -2,7 +2,7 @@
 
 import React from 'react';
 import classNames from 'clsx';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { HiOutlineQuestionMarkCircle } from 'react-icons/hi';
 import { requestApi } from './../../../../utils/wordpress';
 import { Rect } from './../../../../components/General/Rect';

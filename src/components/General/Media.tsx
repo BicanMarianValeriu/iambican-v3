@@ -5,7 +5,7 @@ import classNames from 'clsx';
 import Loader from './Loader';
 import { requestApi } from './../../utils/wordpress';
 import { useImage } from 'react-image';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 import placeholder from './../../static/images/placeholder-bold.png';
 

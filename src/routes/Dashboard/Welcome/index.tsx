@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useLoaderData } from 'react-router';
 import { useAuth } from '../../../auth';
 import { Content as ContentLoader } from '../Loaders';

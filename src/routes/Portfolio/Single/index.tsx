@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useLoaderData, useParams } from 'react-router';
 import { Main } from '../../../components/General/Main';
 import { Navigation } from './Components/Navigation';
