@@ -7,9 +7,9 @@ import type { WP_POST } from '@/utils/types';
 
 export const Main = (props: {
 	posts: WP_POST[];
-	isSingle: boolean;
-	loading: boolean;
-	className: string;
+	isSingle?: boolean;
+	loading?: boolean;
+	className?: string;
 }) => {
 
 	const isSingle = () => {
@@ -22,7 +22,7 @@ export const Main = (props: {
 
 		const classes = ['main', isSingle() ? 'main--single' : 'main--archive', {
 			'main--is-loading': loading,
-			[className]: className !== undefined
+			[className as string]: className !== undefined
 		}];
 
 		return classNames(classes);

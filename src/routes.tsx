@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from 'react';
+import { RouteObject } from 'react-router';
 import App from './App';
 import Home from './routes/Home';
 import FourOFour from './routes/404';
@@ -35,7 +36,7 @@ export function HydrateFallback() {
 	return <PageLoading />;
 }
 
-const routes = [
+const routes: RouteObject[] = [
 	{
 		path: '/',
 		loader: async () => {
@@ -77,7 +78,7 @@ const routes = [
 			},
 			{
 				path: 'p/:slug',
-				loader: pageLoader(queryClient),
+				// loader: pageLoader(queryClient),
 				element: (
 					<Suspense fallback={<PageLoading />}>
 						<Page />
@@ -92,7 +93,7 @@ const routes = [
 			},
 			{
 				path: 'portfolio/:slug',
-				loader: portfolioLoaderSingle(queryClient),
+				// loader: portfolioLoaderSingle(queryClient),
 				element: (
 					<Suspense fallback={<PortfolioSingular />}>
 						<PortfolioSingular />

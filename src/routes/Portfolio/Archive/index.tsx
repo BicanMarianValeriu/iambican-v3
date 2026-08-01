@@ -46,8 +46,8 @@ export function Component() {
 				<PortfolioStats />
 				<div className="container">
 					<Main className="grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 py-10 lg:py-14" {
-						...{ posts, options, loader: Empty }
-					} />
+						...{ posts, options, loader: Empty, isSingle: false }
+					} />	
 				</div>
 			</div>
 		</>
