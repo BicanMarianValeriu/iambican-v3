@@ -9,7 +9,7 @@ import { useQuery } from 'react-query';
 
 import placeholder from './../../static/images/placeholder-bold.png';
 
-function useMedia(mediaId) {
+function useMedia(mediaId: string) {
     return useQuery({
         queryKey: ['media', mediaId],
         queryFn: () => getMediaById(mediaId),
@@ -18,13 +18,13 @@ function useMedia(mediaId) {
     });
 }
 
-const getMediaById = async (mediaId) => {
+const getMediaById = async (mediaId: string) => {
     const { data } = await requestApi.get(`wp/v2/media/${mediaId}`);
 
     return data;
 }
 
-const Image = ({ image }) => {
+const Image = ({ image }: { image: any }) => {
     const {
         alt_text,
         media_details: {
@@ -54,7 +54,7 @@ const Image = ({ image }) => {
     );
 }
 
-export const Media = ({ mediaId }) => {
+export const Media = ({ mediaId }: { mediaId: string }) => {
     const { data, isLoading } = useMedia(mediaId);
 
     const className = classNames(

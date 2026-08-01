@@ -3,8 +3,9 @@ import { Meta } from './Meta';
 import { Sharing } from './Sharing';
 import { Questions } from './Questions';
 import { Title, Content } from '../../../Page/Components';
+import { WP_POST } from '@/utils/types';
 
-export const Article = (props) => {
+export const Article = (props: WP_POST) => {
 	return (
 		<article className="entry entry--single entry--portfolio portfolio">
 			<div className="portfolio__header bg-slate-100">

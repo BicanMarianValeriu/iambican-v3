@@ -9,7 +9,7 @@ const Title = (props: {
     className?: string;
     isSingle?: boolean; 
 }) => {
-    const { type, slug, className } = props;
+    const { type, slug, className = ''} = props;
 
     // Title
     const title = getTitle(props);

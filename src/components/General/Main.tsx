@@ -3,8 +3,14 @@ import classNames from 'clsx';
 import { Entry as Article } from '../../routes/Page/Components';
 import PortfolioArchive from '../../routes/Portfolio/Archive/Components/Entry';
 import PortfolioSingle from '../../routes/Portfolio/Single/Components/Entry';
+import type { WP_POST } from '@/utils/types';
 
-export const Main = (props) => {
+export const Main = (props: {
+	posts: WP_POST[];
+	isSingle: boolean;
+	loading: boolean;
+	className: string;
+}) => {
 
 	const isSingle = () => {
 		const { posts, isSingle } = props;
@@ -25,7 +31,7 @@ export const Main = (props) => {
 	const renderPosts = () => {
 		const { posts = [], loading } = props;
 
-		return posts.map((post, i) => {
+		return posts.map((post: WP_POST, i: number) => {
 			let postType;
 			const key = post?.id ? post.id : i;
 			switch (post?.type) {

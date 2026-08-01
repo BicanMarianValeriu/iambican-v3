@@ -1,35 +1,51 @@
-import React, { useEffect, useRef } from 'react';
+import React, { RefObject, useEffect, useRef } from 'react';
 import { animate } from 'animejs';
 import { useWindowSize, useMouseHovered } from 'react-use';
 
 import Bican from './../../../../static/images/bican.jpg';
 import BicanCartoon from './../../../../static/images/bican-cartoon.jpg';
 
-const Component = () => {
-    const imageRef = useRef(null);
-    const { elX, elY } = useMouseHovered(imageRef);
+const Component: React.FC = () => {
+    const imageRef = useRef<HTMLDivElement | null>(null);
+    const { elX, elY } = useMouseHovered(imageRef as RefObject<Element>);
     const { width: windowWidth } = useWindowSize();
 
     useEffect(() => {
-        const images = Array.from(imageRef.current.querySelectorAll('div'));
+        const imageParent = imageRef.current;
+        if (!imageParent) return;
+
+        const images = Array.from(imageParent.querySelectorAll<HTMLDivElement>('div'));
 
         if (images.length) {
-            setInterval(() => {
+            const interval = setInterval(() => {
                 const randomImg = images[Math.floor(Math.random() * images.length)];
                 images.forEach((img) => img.classList.remove('shown'));
                 randomImg.classList.add('shown');
             }, 5000);
+
+            return () => clearInterval(interval);
         }
     }, []);
 
     useEffect(() => {
-        const animateImage = (e, scale = 1, rotateX = null, rotateY = null) => {
-            const image = e.target.closest('.about-me__profile');
-            const getRotation = (a, axis, s) => a * ((axis / s) * 100 - 50);
-    
+        const animateImage = (
+            e: MouseEvent,
+            scale: number = 1,
+            rotateX: number | null = null,
+            rotateY: number | null = null
+        ) => {
+            const target = e.target as HTMLElement;
+            const image = target.closest('.about-me__profile') as HTMLElement | null;
+            if (!image) return;
+            const getRotation = (a: number, axis: number, s: number) => a * ((axis / s) * 100 - 50);
+
             animate(image, { 
-                rotateY: rotateY !== null ? rotateY : getRotation(0.2, elX, image.offsetWidth),
-                rotateX: rotateX !== null ? rotateX : getRotation(-0.2, elY, image.offsetHeight),
+                rotateY: rotateY !== null && rotateY !== undefined
+                    ? rotateY
+                    : getRotation(0.2, elX, image.offsetWidth),
+                rotateX: rotateX !== null && rotateX !== undefined
+                    ? rotateX
+                    : getRotation(-0.2, elY, image.offsetHeight),
                 scale,
                 easing: 'easeOutElastic',
                 perspective: 650,
@@ -37,8 +53,10 @@ const Component = () => {
         };
 
         const imageEl = imageRef.current;
-        const onMouseMove = (e) => animateImage(e, 1.05);
-        const onMouseLeave = (e) => animateImage(e, 1, 0, 0);
+        if (!imageEl) return;
+
+        const onMouseMove = (e: MouseEvent) => animateImage(e, 1.05);
+        const onMouseLeave = (e: MouseEvent) => animateImage(e, 1, 0, 0);
 
         if (windowWidth > 991) {
             imageEl.addEventListener('mousemove', onMouseMove);
@@ -46,8 +64,10 @@ const Component = () => {
         }
 
         return () => {
-            imageEl.removeEventListener('mousemove', onMouseMove);
-            imageEl.removeEventListener('mouseleave', onMouseLeave);
+            if (windowWidth > 991 && imageEl) {
+                imageEl.removeEventListener('mousemove', onMouseMove);
+                imageEl.removeEventListener('mouseleave', onMouseLeave);
+            }
         };
     }, [windowWidth, elX, elY]);
 

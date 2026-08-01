@@ -6,6 +6,8 @@ import { Title, Content } from '.';
 export default function Article(props: {
 	type: string;
 	isSingle: boolean;
+	loading?: boolean;
+	className?: string;
 }) {
 	const getClasses = () => {
 		const { type, isSingle } = props;

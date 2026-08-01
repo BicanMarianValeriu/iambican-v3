@@ -1,4 +1,5 @@
 import { requestApi } from '../../../utils/wordpress';
+import { QueryClient } from 'react-query';
 
 // ⬇️ define your query
 export const portfolioQuery = () => ({
@@ -11,7 +12,7 @@ export const portfolioQuery = () => ({
 });
 
 // ⬇️ define your loader
-export const loader = (queryClient) => async () => {
+export const loader = (queryClient: QueryClient) => async () => {
 	const query = portfolioQuery();
 
 	return (queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query)));

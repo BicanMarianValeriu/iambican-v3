@@ -16,7 +16,7 @@ export function Component() {
     const initialData = useLoaderData();
     const { slug } = useParams();
     const { data: project } = useQuery({
-        ...portfolioSingleQuery(slug),
+        ...portfolioSingleQuery(slug as string),
         initialData
     });
 

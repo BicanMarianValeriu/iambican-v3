@@ -1,7 +1,9 @@
 import { requestApi } from '../../../utils/wordpress';
+import { QueryClient } from 'react-query';
+import { WP_POST } from '@/utils/types';
 
 // ⬇️ define your query
-export const portfolioSingleQuery = (slug) => ({
+export const portfolioSingleQuery = (slug: string) => ({
     queryKey: ['portfolio', slug],
     queryFn: async () => {
         const { data } = await requestApi.get(`wp/v2/portfolios?slug=${slug}`);
@@ -18,7 +20,7 @@ export const portfolioSingleQuery = (slug) => ({
 });
 
 // ⬇️ define your loader
-export const loader = (queryClient) => async ({ params: { slug } }) => {
+export const loader = (queryClient: QueryClient) => async ({ params: { slug } }: { params: WP_POST }) => {
     const query = portfolioSingleQuery(slug);
 
     return (queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query)));

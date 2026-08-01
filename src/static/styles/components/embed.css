@@ -6,14 +6,10 @@
     }
 }
 
-.wp-embed-aspect-16-9 {
-    .wp-block-embed {
-        &__wrapper {
-            aspect-ratio: 16 / 9;
-        }
-    }
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+    aspect-ratio: 16 / 9;
+}
 
-    iframe {
-        height: 100%;
-    }
+.wp-embed-aspect-16-9 iframe {
+    height: 100%;
 }

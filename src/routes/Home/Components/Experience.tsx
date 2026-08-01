@@ -2,14 +2,30 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useWindowSize } from 'react-use';
 import Date from './elements/Date';
 
-// Components
-const AboutExperience = () => {
-	const [position, setPosition] = useState({ top: 0, bottom: 0 });
-	const { width } = useWindowSize();
-	const timelineBoxes = useRef(null);
-	const timelineBar = useRef(null);
+type ExperienceItem = {
+	jobTitle: string;
+	company: string;
+	description: string;
+	location: string;
+	duration: {
+		from: string;
+		to?: string;
+	};
+};
 
-	const experience = [
+type Position = {
+	top: number;
+	bottom: number;
+};
+
+const AboutExperience: React.FC = () => {
+	const [position, setPosition] = useState<Position>({ top: 0, bottom: 0 });
+	const { width } = useWindowSize();
+	const timelineBoxes = useRef<HTMLDivElement | null>(null);
+	// timelineBar is unused, so we can remove it (but kept if needed for context)
+	// const timelineBar = useRef<HTMLDivElement | null>(null);
+
+	const experience: ExperienceItem[] = [
 		{
 			jobTitle: "WordPress/Frontend Developer",
 			company: "AM2 Studio / myZone",
@@ -40,10 +56,12 @@ const AboutExperience = () => {
 
 	useEffect(() => {
 		const adjustHeight = () => {
-			const firstBox = timelineBoxes.current.querySelector(`#timeline-box-1`);
-			const lastBox = timelineBoxes.current.querySelector(`#timeline-box-${experience.length}`);
+			if (!timelineBoxes.current) return;
+			const firstBox = timelineBoxes.current.querySelector<HTMLDivElement>(`#timeline-box-1`);
+			const lastBox = timelineBoxes.current.querySelector<HTMLDivElement>(`#timeline-box-${experience.length}`);
+			if (!firstBox || !lastBox) return;
 
-			let top, bottom;
+			let top: number, bottom: number;
 			top = firstBox.offsetHeight / 2;
 			bottom = lastBox.offsetHeight / 2;
 
@@ -52,8 +70,7 @@ const AboutExperience = () => {
 
 		adjustHeight();
 		// eslint-disable-next-line
-	}, [width, timelineBar, timelineBoxes]);
-
+	}, [width, timelineBoxes]);
 
 	return (
 		<section id="about-experience" className="about-experience relative bg-slate-50 py-10">
@@ -70,7 +87,7 @@ const AboutExperience = () => {
 
 							return (
 								<article
-									id={idPrefix.concat(index + 1)}
+									id={idPrefix.concat(String(index + 1))}
 									className="timeline-boxes__item timeline-box timeline-box--animated relative mb-10 before:absolute before:top-2/4 before:-left-[30px] before:origin-center before:-translate-y-2/4 before:block before:bg-slate-200 before:w-[8px] before:h-[8px] before:-ms-[4px] before:rounded-full before:transition-all before:duration-300 before:ease-in-out"
 									key={index}
 								>
@@ -87,7 +104,7 @@ const AboutExperience = () => {
 														<span className="block text-white font-medium">{to ?? 'Prezent'}</span>
 													</span>
 												</div>
-												<Date from={from} to={to} />
+												<Date from={from} to={to} className="" />
 												<div className="flex flex-row md:flex-col justify-between items-center md:items-start">
 													<p className="font-bold text-white">{item.company}</p>
 													<span className="text-[10px] text-white text-opacity-50">{item.location}</span>
@@ -107,7 +124,6 @@ const AboutExperience = () => {
 			</div>
 		</section >
 	);
-}
-
+};
 
 export default AboutExperience;

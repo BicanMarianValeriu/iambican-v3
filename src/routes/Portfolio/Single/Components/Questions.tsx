@@ -7,9 +7,10 @@ import { HiOutlineQuestionMarkCircle } from 'react-icons/hi';
 import { requestApi } from './../../../../utils/wordpress';
 import { Rect } from './../../../../components/General/Rect';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './../../../../components/ui/accordion';
+import { WP_POST } from '@/utils/types';
 
 // ⬇️ define your query
-const questionsQuery = (slug, include = []) => ({
+const questionsQuery = (slug: string, include: string[] = []) => ({
     queryKey: ['portfolio', 'questions', slug],
     queryFn: async () => {
         const { data = [] } = await requestApi.get(`wp/v2/q_and_a/?include=${include.join(',')}`);
@@ -20,7 +21,7 @@ const questionsQuery = (slug, include = []) => ({
 
 const ContentLoaderRender = ({ amount = 2 }) => (
     <div className="space-y-[1px]">
-        {[...amount].map((_, index) => (<Rect key={index} className="rounded-none w-full h-12" />))}
+        {Array.from({ length: amount }, (_, index) => (<Rect key={index} className="rounded-none w-full h-12" />))}
     </div>
 );
 
@@ -43,7 +44,7 @@ const Accordions = ({ items, ...props }) => {
     );
 };
 
-export const Questions = (props) => {
+export const Questions = (props: WP_POST) => {
     const { acf: { meta: { questions: include = [] } = {} } = {}, slug } = props;
 
     const { data = false, isLoading } = useQuery(questionsQuery(slug, include));

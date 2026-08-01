@@ -28,3 +28,24 @@ const contactSchema = z.object({
 })
 
 export { loginSchema, userSchema, subscribeSchema, contactSchema };
+
+export type WP_POST = {
+    id: number;
+    date: string;
+    date_gmt: string;
+    slug: string;
+    status: string;
+    type: string;
+    link: string;
+    title: { rendered: string };
+    content: { rendered: string; protected: boolean };
+    excerpt: { rendered: string; protected: boolean };
+    author: number;
+    featured_media: number;
+    comment_status: 'open' | 'closed';
+    ping_status: 'open' | 'closed';
+    categories?: number[];
+    tags?: number[];
+    [key: string]: any; // To allow for flexible fields/extensions
+};
+

@@ -3,8 +3,9 @@ import { Link } from 'react-router';
 import { HiArrowRight } from 'react-icons/hi';
 import { Title, Content } from '../../../Page/Components';
 import { Media } from './../../../../components/General/Media';
+import { WP_POST } from '@/utils/types';
 
-export const Item = (props) => {
+export const Item = (props: WP_POST) => {
     const { featured_media, slug } = props;
 
     return (

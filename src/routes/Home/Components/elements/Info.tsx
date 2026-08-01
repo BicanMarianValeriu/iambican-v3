@@ -1,29 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const AboutContent = () => {
-    const [willOpen, setWillOpen] = useState(true);
-    const descriptionRef = useRef(null);
-    const btnRef = useRef(null);
+const AboutContent: React.FC = () => {
+    const [willOpen, setWillOpen] = useState<boolean>(true);
+    const descriptionRef = useRef<HTMLDivElement | null>(null);
+    const btnRef = useRef<HTMLButtonElement | null>(null);
 
     useEffect(() => {
         const buttonEl = btnRef.current;
 
         const toggleDescription = () => {
             if (willOpen) {
-                descriptionRef.current.classList.add('about-me__content-text--opened');
-                btnRef.current.innerHTML = btnRef.current.getAttribute('data-less');
+                descriptionRef.current?.classList.add('about-me__content-text--opened');
+                if (btnRef.current) {
+                    btnRef.current.innerHTML = btnRef.current.getAttribute('data-less') || '';
+                }
                 setWillOpen(false);
             } else {
-                descriptionRef.current.classList.remove('about-me__content-text--opened');
-                btnRef.current.innerHTML = btnRef.current.getAttribute('data-more');
+                descriptionRef.current?.classList.remove('about-me__content-text--opened');
+                if (btnRef.current) {
+                    btnRef.current.innerHTML = btnRef.current.getAttribute('data-more') || '';
+                }
                 setWillOpen(true);
             }
         };
 
-        buttonEl.addEventListener('click', toggleDescription);
+        buttonEl?.addEventListener('click', toggleDescription);
 
         return () => {
-            buttonEl.removeEventListener('click', toggleDescription);
+            buttonEl?.removeEventListener('click', toggleDescription);
         };
     }, [willOpen]);
 
@@ -54,7 +58,14 @@ const AboutContent = () => {
                     <p className="mb-5">Deși am absolvit Facultatea de Drept și Filologie (Engleză) la Universitatea UCB din Târgu Jiu, pasiunea mea pentru tehnologie m-a determinat să urmez o carieră în dezvoltarea web. În 2024, am decis să îmi aprofundez cunoștințele tehnice printr-un nou program de studii la Facultatea de Inginerie – Automatică & Informatică din cadrul Universității din Târgu Jiu.</p>
                     <p className="mb-5">Îmi place să construiesc soluții web scalabile și optimizate, iar fiecare proiect este pentru mine o oportunitate de a îmbina creativitatea cu tehnologia. Sunt mereu deschis la noi provocări și colaborări care să ducă la crearea unor produse digitale de impact.</p>
                 </div>
-                <button className="font-bold hover:text-blue-500" data-less="mai puțin" data-more="mai mult" ref={btnRef}>mai mult</button>
+                <button
+                    className="font-bold hover:text-blue-500"
+                    data-less="mai puțin"
+                    data-more="mai mult"
+                    ref={btnRef}
+                >
+                    mai mult
+                </button>
             </div>
         </div>
     );
