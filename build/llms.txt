@@ -1,0 +1,34 @@
+# mvbican.com
+
+> Personal website of Bican Marian Valeriu, a full-stack web developer based in Târgu Jiu, Romania.
+
+## Overview
+- This site presents Marian Bican's professional profile, experience, portfolio, and contact information.
+- It focuses on web development, WordPress, React, and modern front-end practices.
+- Content is primarily presented in Romanian and is intended for visitors, clients, and collaborators.
+
+## Main pages
+- Home: https://mvbican.com/
+- Portfolio: https://mvbican.com/portfolio/
+- Contact: https://mvbican.com/contact/
+- Privacy policy: https://mvbican.com/p/politica-confidentialitate
+- Terms and conditions: https://mvbican.com/p/termeni-si-conditii
+
+## Topics covered
+- About me and personal background
+- Professional experience and career timeline
+- Technical skills and expertise
+- Portfolio projects and examples of work
+- Contact form and social profiles
+
+## Technologies and services mentioned
+- React and TypeScript
+- WordPress and WooCommerce
+- PHP, JavaScript, HTML5, CSS3/SCSS
+- Git and modern frontend development workflows
+
+## Contact
+- Contact page: https://mvbican.com/contact/
+- Email: marianvaleriubican@gmail.com
+- LinkedIn: https://www.linkedin.com/in/mvbican/
+- Facebook: https://www.facebook.com/mvbican/
