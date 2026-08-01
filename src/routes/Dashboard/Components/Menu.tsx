@@ -8,7 +8,7 @@ import { useWindowSize } from 'react-use';
 const Menu = (props: { loading: boolean }) => {
     const { loading } = props;
     const { width } = useWindowSize();
-    const [isMobile, setIsMobile] = useState();
+    const [isMobile, setIsMobile] = useState<boolean>(false);
 
     useEffect(() => {
         if (width <= 768) {

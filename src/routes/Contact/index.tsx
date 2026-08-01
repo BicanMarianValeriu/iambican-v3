@@ -10,7 +10,9 @@ import { contactSchema } from './../../utils/types';
 
 // ⬇️ define your Component
 export function Component() {
-    useEffect(() => window.scrollTo(0, 0));
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    });
 
     const { formRef, control, isLoading } = useContactForm({
         mode: 'onChange',

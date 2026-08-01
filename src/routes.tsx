@@ -78,7 +78,7 @@ const routes: RouteObject[] = [
 			},
 			{
 				path: 'p/:slug',
-				loader: pageLoader(queryClient) as unknown as LoaderFunction,
+				loader: pageLoader(queryClient) ,
 				element: (
 					<Suspense fallback={<PageLoading />}>
 						<Page />
@@ -93,7 +93,7 @@ const routes: RouteObject[] = [
 			},
 			{
 				path: 'portfolio/:slug',
-				loader: portfolioLoaderSingle(queryClient) as unknown as LoaderFunction,
+				loader: portfolioLoaderSingle(queryClient)  ,
 				element: (
 					<Suspense fallback={<PortfolioSingular />}>
 						<PortfolioSingular />

@@ -72,29 +72,29 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     useEffect(() => {
-        if (token) {
-            const fetchMe = async () => {
-                actions.setLoading(true);
+        const fetchMe = async (token: string) => {
+            actions.setLoading(true);
 
-                if (!isTokenExpired(token)) {
-                    try {
-                        const { data } = await requestApi.get('wp/v2/users/me', {
-                            params: { context: 'edit' }
-                        });
-                        actions.setUser(data);
-                    } catch (error) {
-                        toast.error('Ceva nu a mers bine - incearcă din nou.');
-                        actions.logout();
-                    } finally {
-                        actions.setLoading(false);
-                    }
-                } else {
-                    toast.info('Sesiunea a expirat.');
+            if (!isTokenExpired(token)) {
+                try {
+                    const { data } = await requestApi.get('wp/v2/users/me', {
+                        params: { context: 'edit' }
+                    });
+                    actions.setUser(data);
+                } catch (error) {
+                    toast.error('Ceva nu a mers bine - incearcă din nou.');
                     actions.logout();
+                } finally {
+                    actions.setLoading(false);
                 }
-            };
+            } else {
+                toast.info('Sesiunea a expirat.');
+                actions.logout();
+            }
+        };
 
-            fetchMe();
+        if (token) {
+            fetchMe(token);
         }
         // eslint-disable-next-line
     }, [token]);

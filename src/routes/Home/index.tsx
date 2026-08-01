@@ -4,7 +4,9 @@ import Experience from './Components/Experience';
 import Skills from './Components/Skills';
 
 const Home = () => {
-	useEffect(() => window.scrollTo(0, 0));
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	});
 
 	return (
 		<main className="content" id="content">

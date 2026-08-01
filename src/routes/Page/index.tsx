@@ -11,7 +11,9 @@ import './../../static/styles/routes/page.css';
 
 // ⬇️ define your Component
 export function Component() {
-    useEffect(() => window.scrollTo(0, 0));
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    });
 
     const initialData = useLoaderData();
     console.log(initialData);

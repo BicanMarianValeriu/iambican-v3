@@ -13,8 +13,8 @@ import { FormField } from './../../components/General';
 import { Button } from './../../components/ui/button';
 
 export function Component() {
-    const [pending, setPending] = useState();
-    const [redirect, setRedirect] = useState();
+    const [pending, setPending] = useState<boolean | null>(null);
+    const [redirect, setRedirect] = useState<boolean | undefined>(undefined);
     const navigate = useNavigate();
     const { token, actions: { setToken } } = useAuth();
     const { hash } = useLocation();
