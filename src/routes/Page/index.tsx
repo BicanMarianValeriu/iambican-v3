@@ -14,11 +14,14 @@ export function Component() {
     useEffect(() => window.scrollTo(0, 0));
 
     const initialData = useLoaderData();
+    console.log(initialData);
     const { slug } = useParams();
     const { data: page } = useQuery({
         ...pageQuery(slug as string),
         initialData
     });
+
+    console.log(page);
 
     const { title: { rendered: title } = {} } = page;
 
