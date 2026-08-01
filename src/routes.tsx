@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { RouteObject } from 'react-router';
+import { LoaderFunction, RouteObject } from 'react-router';
 import App from './App';
 import Home from './routes/Home';
 import FourOFour from './routes/404';
@@ -78,7 +78,7 @@ const routes: RouteObject[] = [
 			},
 			{
 				path: 'p/:slug',
-				// loader: pageLoader(queryClient),
+				loader: pageLoader(queryClient) as unknown as LoaderFunction,
 				element: (
 					<Suspense fallback={<PageLoading />}>
 						<Page />
@@ -93,7 +93,7 @@ const routes: RouteObject[] = [
 			},
 			{
 				path: 'portfolio/:slug',
-				// loader: portfolioLoaderSingle(queryClient),
+				loader: portfolioLoaderSingle(queryClient) as unknown as LoaderFunction,
 				element: (
 					<Suspense fallback={<PortfolioSingular />}>
 						<PortfolioSingular />
