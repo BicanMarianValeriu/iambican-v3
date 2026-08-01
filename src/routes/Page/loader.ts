@@ -17,12 +17,11 @@ export const pageQuery = (slug: string) => ({
             statusText: 'Not Found',
         });
     },
-}); 
+});
 
 // ⬇️ define your loader
 export const loader = (queryClient: QueryClient) => async ({ params: { slug } }: { params: WP_POST }) => {
     const query = pageQuery(slug);
-    console.log(query);
 
     return (queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query)));
 }

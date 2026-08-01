@@ -15,8 +15,7 @@ export function Component() {
         window.scrollTo(0, 0)
     });
 
-    const initialData = useLoaderData();
-    console.log(initialData);
+    const initialData = useLoaderData(); 
     const { slug } = useParams();
     const { data: page } = useQuery({
         ...pageQuery(slug as string),
