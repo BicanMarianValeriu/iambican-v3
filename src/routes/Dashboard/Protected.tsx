@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from '../../auth';
 import { useNavigate } from 'react-router';
 
-const Protected = ({ children, fallbackUrl = '/login/' }) => {
+const Protected = ({ children }: { children: React.ReactNode }, fallbackUrl = '/login/') => {
     const { token } = useAuth();
     const navigate = useNavigate();
 

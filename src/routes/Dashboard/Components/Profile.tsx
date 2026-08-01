@@ -28,7 +28,7 @@ import {
     useSidebar,
 } from './../../../components/ui/sidebar';
 
-const Avatar = (props) => {
+const Avatar = (props: { user: any, className: string }) => {
     const { user, className } = props;
     const { name = 'User', avatar_urls = [] } = user ?? {};
 
@@ -42,7 +42,7 @@ const Avatar = (props) => {
     );
 }
 
-const Profile = (props) => {
+const Profile = (props: { user: any, loading: boolean }) => {
     const { isMobile } = useSidebar();
     const { actions: { logout }, user = {}, loading } = useAuth();
     const { name = 'User', email = '' } = user ?? {};

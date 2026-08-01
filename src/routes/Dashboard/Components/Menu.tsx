@@ -5,7 +5,7 @@ import { Rect } from './../../../components/General';
 import { NavLink } from 'react-router';
 import { useWindowSize } from 'react-use';
 
-const Menu = (props) => {
+const Menu = (props: { loading: boolean }) => {
     const { loading } = props;
     const { width } = useWindowSize();
     const [isMobile, setIsMobile] = useState();

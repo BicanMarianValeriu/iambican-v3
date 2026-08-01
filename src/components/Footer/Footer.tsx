@@ -6,7 +6,7 @@ import { CallToAction } from './CallToAction';
 import { Navigation } from '../General/Navigation';
 import { useLocation } from 'react-router';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     const { pathname } = useLocation();
 
     return (

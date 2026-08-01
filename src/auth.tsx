@@ -39,7 +39,14 @@ const loggerMiddleware = (dispatch: any) => (action: any) => {
 // Context
 const AuthContext = createContext({
     ...initialState,
-    actions: {}
+    token: null,
+    actions: {
+        setLoading: (isLoading: boolean) => {},
+        setUser: (data: any) => {},
+        logout: () => {},
+        setToken: (token: string) => {},
+        removeToken: () => {}
+    }
 });
 
 // AuthProvider

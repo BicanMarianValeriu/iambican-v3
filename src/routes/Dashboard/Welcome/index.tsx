@@ -16,14 +16,14 @@ const pageQuery = () => ({
 });
 
 // ⬇️ define your loader
-export const loader = (queryClient) => async ({ params: { slug } }) => {
-    const query = pageQuery(slug);
+export const loader = (queryClient: any) => async () => {
+    const query = pageQuery();
 
     return (queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query)));
 }
 
 // ⬇️ define your Component
-const Component = () => {
+const Component: React.FC = () => {
     const { user, loading } = useAuth();
     const { name = 'User' } = user ?? {};
 
