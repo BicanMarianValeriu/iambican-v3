@@ -20,9 +20,7 @@ export function Component() {
     const { data: page } = useQuery({
         ...pageQuery(slug as string),
         initialData
-    });
-
-    console.log(page);
+    }); 
 
     const { title: { rendered: title } = {} } = page;
 
