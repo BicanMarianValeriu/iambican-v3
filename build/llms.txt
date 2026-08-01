@@ -8,11 +8,11 @@
 - Content is primarily presented in Romanian and is intended for visitors, clients, and collaborators.
 
 ## Main pages
-- Home: https://mvbican.com/
-- Portfolio: https://mvbican.com/portfolio/
-- Contact: https://mvbican.com/contact/
-- Privacy policy: https://mvbican.com/p/politica-confidentialitate
-- Terms and conditions: https://mvbican.com/p/termeni-si-conditii
+- [Home](https://mvbican.com/)
+- [Portfolio](https://mvbican.com/portfolio/)
+- [Contact](https://mvbican.com/contact/)
+- [Privacy policy](https://mvbican.com/p/politica-confidentialitate)
+- [Terms and conditions](https://mvbican.com/p/termeni-si-conditii)
 
 ## Topics covered
 - About me and personal background
@@ -28,7 +28,7 @@
 - Git and modern frontend development workflows
 
 ## Contact
-- Contact page: https://mvbican.com/contact/
-- Email: marianvaleriubican@gmail.com
-- LinkedIn: https://www.linkedin.com/in/mvbican/
-- Facebook: https://www.facebook.com/mvbican/
+- [Contact page](https://mvbican.com/contact/)
+- [Email](marianvaleriubican@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/mvbican/)
+- [Facebook](https://www.facebook.com/mvbican/)
