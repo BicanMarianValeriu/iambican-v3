@@ -7,7 +7,7 @@ import { LRUCache } from 'lru-cache';
 // React requirements
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { renderToPipeableStream } from 'react-dom/server';
 import { createStaticHandler, createStaticRouter, StaticRouterProvider } from 'react-router';
 

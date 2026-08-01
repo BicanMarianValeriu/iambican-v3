@@ -1,5 +1,5 @@
 import { requestApi } from '../../../utils/wordpress';
-import { QueryClient } from 'react-query';
+import { QueryClient } from '@tanstack/react-query';
 import { WP_POST } from '@/utils/types';
 
 // ⬇️ define your query

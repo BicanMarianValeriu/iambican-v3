@@ -8,7 +8,7 @@ import Settings from './routes/Dashboard/Settings';
 import Protected from './routes/Dashboard/Protected';
 import Login from './routes/Login';
 import { requestApi } from './utils/wordpress';
-import { QueryClient } from 'react-query';
+import { QueryClient } from '@tanstack/react-query';
 import { Loading as PageLoading } from './routes/Page/Components';
 import ContactLoading from './routes/Contact/Loading';
 
