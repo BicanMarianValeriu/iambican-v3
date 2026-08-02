@@ -1,10 +1,10 @@
 // Express requirements 
+import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import fs from 'fs';
 
 // Our loader - this basically acts as the entry point for each page load
 import loader from './loader';
